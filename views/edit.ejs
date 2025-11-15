@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Chat</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 420px;
+            background: white;
+            padding: 25px;
+            margin: 40px auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        h3 {
+            color: #1a73e8;
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+            color: #333;
+            font-size: 0.95rem;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 15px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        textarea:focus {
+            border-color: #1a73e8;
+            box-shadow: 0 0 3px rgba(26,115,232,0.4);
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #1a73e8;
+            border: none;
+            color: white;
+            font-size: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 12px;
+        }
+
+        button:hover {
+            background-color: #0f5fcc;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h3>Edit Chat: <%= chat._id %></h3>
+        <p>This chat was sent from <strong><%= chat.from %></strong> to <strong><%= chat.to %></strong></p>
+
+        <form method="POST" action="/chats/<%= chat._id %>?_method=PUT">
+            <textarea name="msg" rows="10"><%= chat.msg %></textarea>
+            <button>Edit</button>
+        </form>
+    </div>
+
+</body>
+</html>

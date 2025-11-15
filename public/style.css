@@ -1,0 +1,11 @@
+.chat{
+    background-color:#e8f0fe; /* soft light blue */
+    color:#1a237e;           /* deep professional blue */
+    padding:20px;
+    display: inline-block;
+}
+
+.msg{
+    background-color:#c5cae9; /* lavender-blue (soft, formal) */
+    padding:16px;
+}
